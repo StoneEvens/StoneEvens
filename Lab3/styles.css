@@ -1,0 +1,110 @@
+	body {
+		font-family: zen kurenaido, titillium web, arial;
+		padding: 10px;
+		background-color: #fae3ac;
+		color: darkslategray;
+	}
+
+	div {
+		background-color: white;
+	}
+
+	header {
+		background-color: royalblue;
+		display: flex;
+	}
+
+	.badge {
+		background-image: url('20221026_165403-1.jpg');
+		background-position: top center;
+		background-size: 100%;
+		background-attachment: fixed;
+		width: 90%;
+		text-align: center;
+		font-weight: bold;
+		font-size: 30pt;
+		padding-top: 10px;
+	}
+
+	.list {
+		background-color: skyblue;
+		text-align: center;
+		font-weight: bold;
+		font-size: 14pt;
+		display: inline-block;
+		width: 10%;
+		padding-right: 5px;
+	}
+	.navbar {
+		display: none;
+		list-style: none;
+		margin: 0;
+	}
+
+	nav ul {
+		top: 20px;
+		left: 20px;
+		width: 100%;
+		position: static;
+	}
+
+	nav:hover ul {
+		display: block;
+		padding: 0;
+	}
+
+	nav ul a {
+		text-decoration: none;
+		width: inherit;
+	}
+
+	nav ul a li {
+		background-color: skyblue;
+		text-align: center;
+		border-style: ridge;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: inherit;
+		color: darkslategray;
+		border-color: white;
+		margin-top: 1px;
+		border-right: 1;
+	}
+
+	nav ul a li:hover,nav label:hover {
+		border-style: dotted;
+		background-color: steelblue;
+	}
+
+	nav label {
+		background-color: skyblue;
+		text-align: center;
+		font-weight: bold;
+		font-size: 14pt;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		border-style: ridge;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	h2, h4 {
+		text-align: center;
+		font-family: inherit;
+	}
+
+	@media screen and (max-width: 960px) {
+		nav ul a li, .list label {
+			background-color: royalblue;
+			color: whitesmoke;
+		}
+		.badge {
+			background-image: url('20221113_170218.jpg');
+			background-position: top center;
+			background-size: 100%;
+		}
+		nav ul a li:hover,nav label:hover {
+			background-color: mediumslateblue;
+		}
+	}
