@@ -1,0 +1,127 @@
+body {
+	background-color: #fff3db;
+}
+div {
+	font-family: zen kurenaido, titillium web, arial;
+	font-size: 12pt;
+	width: 100%;
+}
+label {
+	font-family: inherit;
+	font-size: inherit;
+	text-align: right;
+	float: right;
+	margin-right: 20%;
+}
+input {
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+}
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+	resize: none;
+}
+image {
+	size: 10%;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	height: 350px;
+}
+
+.formatLabel {
+	width: 10%;
+	float: left;
+}
+
+.formatItem1 {
+	width: 80%;
+	float: left;
+}
+.formatItem2 {
+	width: 35%;
+	float: left;
+}
+.formatItem3 {
+	width: 70%;
+	float: left;
+}
+
+.formatRow {
+	width: 100%;
+	padding-top: 14px;
+	float: top;
+	height: 10%;
+}
+.formatSpecialRow {
+	width: 100%;
+	padding-top: 14px;
+	float: top;
+	height: 10%;
+}
+
+.formatTARow {
+	width: 100%;
+	padding-top: 14px;
+	float: top;
+	height: 40%;
+}
+.formatTALabel {
+	width: 10%;
+	float: left;
+}
+.formatTA {
+	width: 80%;
+	float: left;
+}
+
+@media screen and (max-width: 960px) {
+	.formatItem2 {
+		width: 35%;
+		padding-right: 50%;
+		padding-bottom: 17px;
+
+	}
+	.formatTALabel {
+		padding-left: 3%;
+		width: 10%;
+	}
+	.formatTA {
+		width: 80%;
+		float: left;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.formatSpecialRow {
+		width: 100%;
+		float: top;
+		height: 24%;
+	}
+}
+
+@media print {
+	div {
+		font-family: titillium web;
+		font-weight: bold;
+		font-size: 18pt;
+	}
+	.formatItem2 {
+		width: 30%;
+		padding-right: 10%;
+	}
+	.formatTALabel {
+		padding-left: 3%;
+		width: 10%;
+	}
+	.formatTA {
+		width: 80%;
+		float: left;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
