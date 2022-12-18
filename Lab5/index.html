@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Buttons
+	</title>
+</head>
+<body>
+	<div>
+		<h1>
+			<script>
+				var name;
+
+				name = window.prompt('Please enter your name');
+
+				document.writeln('Hi ' + name + ', it is now ' + Date());
+			</script>
+		</h1>
+	</div>
+	<div>
+		<h2>
+			Result: 
+			<script>
+				var x = 0, y = 0;
+
+				x = parseInt(window.prompt('Enter first integer'));
+
+				y = parseInt(window.prompt('Enter second integer'));
+
+				if (x > y) {
+					document.body.style.backgroundColor="lightblue";
+					document.writeln('firstInput>secondInput');
+				} else if (x < y) {
+					document.body.style.backgroundColor="lightgreen";
+					document.writeln('secondInput>firstInput');
+				} else {
+					document.body.style.backgroundColor="lightyellow";
+					document.writeln('secondInput==firstInput');
+				}
+			</script>
+		</h2>
+		<div>
+			<input type="button" value="Show First Input" onclick="alert('First Input: ' + x)">
+			<input type="button" value="Show Second Input" onclick="alert('Second Input: ' + y);">
+		</div>
+		<div>
+			<input type="button" value="Reset color" onclick="document.body.style.backgroundColor='white'; alert('Resetting color');">
+		</div>
+	</div>
+</body>
+</html>
