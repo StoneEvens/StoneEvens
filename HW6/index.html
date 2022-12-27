@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HW6-Calculator</title>
+</head>
+<body>
+	<style type="text/css">
+		h2 {
+			padding-top: 10px;
+		}
+
+		input {
+			width: 94%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5%;
+			//padding-right: 5%;
+			border: solid;
+			border-color: lightgray;
+			border-radius: 5px;
+			border-width: 2px;
+			font-family: inherit;
+		}
+
+		div form {
+			margin: 5%;
+		}
+
+		div form div {
+			padding-top: 10px;
+		}
+
+		select {
+			width: 100%;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5%;
+			border: solid;
+			border-color: lightgray;
+			border-radius: 5px;
+			border-width: 2px;
+			font-family: inherit;
+		}
+
+		.container {
+			background-color: #e7e7e7;
+			height: 500px;
+			width: 50%;
+			border: 2px;
+			border-color: gray;
+			border-style: solid;
+			border-radius: 20px;
+			font-family: "Zen Kurenaido", "Titillium Web", "Arial";
+			text-align: center;
+			//margin: 5%;
+		}
+
+		.resultButton {
+			width: 100%;
+			background-color: #9e4800;
+			padding-left: 0;
+			font-family: inherit;
+			color: white;
+			border-color: black;
+			border-width: 2px;
+		}
+		.result {
+			padding-top: 20px;
+		}
+	</style>
+
+	<div class="container">
+		<div>
+			<h2>JS Calculator</h2>
+		</div>
+		<form>
+			<div>
+				<a>Number 1</a>
+			</div>
+			<div>
+				<input type="text" id="number1">
+			</div>
+			<div>
+				<a>Number 2</a>
+			</div>
+			<div>
+				<input type="text" id="number2">
+			</div>
+			<div>
+				<a>Operate way?</a>
+			</div>
+			<div>
+				<select id="operator">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="x">x</option>
+					<option value="/">/</option>
+				</select>
+			</div>
+			<div>
+				<div>
+					<input type="button" id="calculate" class="resultButton" value="Add">
+				</div>
+			</div>
+			<div class="result" id="result">
+				<a>Result = 0</a>
+			</div>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		var operator = document.getElementById("operator").value;
+		var number1 = document.getElementById("number1").value;
+		var number2 = document.getElementById("number2").value;
+		var operation = false;
+
+		window.addEventListener("load", start);
+
+		function start() {
+			
+			var operateButton = document.getElementById("operator");
+			var button = document.getElementById("calculate");
+			operateButton.addEventListener("click", update);
+			button.addEventListener("click", calculate, false);
+		}
+
+		function update() {	
+			operator = document.getElementById("operator").value;
+			var text = "";
+
+			switch (operator) {
+			case "+":
+				text = "Add";
+				break;
+			case "-":
+				text = "Subtract";
+				break;
+			case "x":
+				text = "Multiply";
+				break;
+			case "/":
+				text = "Devide";
+				break;
+			}
+
+			document.getElementById("calculate").value = text;
+		}
+
+		function calculate() {
+			number1 = document.getElementById("number1").value;
+			number2 = document.getElementById("number2").value;
+			var result = 0;
+
+			if ((number1 == "" || number2 == "")) {
+				
+				alert("Please fill in both blanks to operate");
+				
+			} else {
+				operation = true;
+
+				switch (operator) {
+				case "+":
+					result = add(number1, number2);
+					break;
+				case "-":
+					result = minus(number1, number2);
+					break;
+				case "x":
+					result = times(number1, number2);
+					break;
+				case "/":
+					result = devide(number1, number2);
+					break;
+				}
+
+				document.getElementById("result").innerHTML = "Result = " + result;
+			}
+			
+			operation = false;
+			
+		}
+
+		function add(number1, number2) {
+			if (operation) {
+				return parseInt(number1) + parseInt(number2);
+			}
+		}
+
+		function minus(number1, number2) {
+			if (operation) {
+				return parseInt(number1) - parseInt(number2);
+			}
+		}
+
+		function times(number1, number2) {
+			if (operation) {
+				return parseInt(number1) * parseInt(number2);
+			}
+		}
+
+		function devide(number1, number2) {
+			if (operation) {
+				if (parseInt(number2) != 0) {
+					return parseInt(number1) / parseInt(number2);
+				} else {
+					alert("Denominator must not be 0");
+					return "Error";
+				}				
+			}
+		}
+	</script>
+</body>
+</html>
