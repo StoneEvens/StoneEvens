@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Extra Bonus</title>
+</head>
+<body>
+	<div>
+		<p id="first">
+			
+		</p>
+		<p id="last">
+			
+		</p>
+		<p id="offset">
+			
+		</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener("load", start);
+
+		function start() {
+			var input = window.prompt("input data");
+			var searchQuery = window.prompt("input a char to search");
+
+			document.getElementById("first").innerHTML = input.indexOf(searchQuery);
+			document.getElementById("last").innerHTML = input.lastIndexOf(searchQuery);
+			document.getElementById("offset").innerHTML = input.indexOf(searchQuery, 3);
+		}
+	</script>
+</body>
+</html>
